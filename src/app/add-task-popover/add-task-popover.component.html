@@ -1,0 +1,30 @@
+  <ion-radio-group ngDefaultControl [(ngModel)]="priority">
+  <ion-list-header>
+    <ion-label position="stacked">Priority</ion-label>
+   </ion-list-header>
+  <ion-item>
+    <ion-label>Daily</ion-label>
+    <ion-radio value="daily" ></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Urgent</ion-label>
+    <ion-radio value="urgent" ></ion-radio>
+  </ion-item>
+  </ion-radio-group>
+  <ion-list>
+<ion-item>
+  <ion-label position="stacked">Task title</ion-label>
+  <ion-input type="text" [(ngModel)]="title"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Task Description</ion-label>
+  <ion-input type="text"[(ngModel)]="desc"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Complete By</ion-label>
+  <ion-datetime min="2020" max="2025" display-format="MM/DD/YYYY"
+  [(ngModel)]="by"></ion-datetime>
+</ion-item>
+</ion-list>
+<ion-button exspand="block" color="primary" (click)="addtask()">Add Task</ion-button>
+<ion-button exspand="block" color="secondary" (click)="close()">Close</ion-button>

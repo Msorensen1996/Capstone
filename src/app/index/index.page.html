@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Companay Command</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear " slot="icon-only" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let task of tasks">
+      <ion-item>
+      <ion-label>
+        <h1>{{ task.data().prio }}</h1>
+        <h2>{{ task.data().title }}</h2>
+        <h3>{{ task.data().description }}</h3>
+        <p>{{ task.data().Due }}</p>
+      </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="secondary" (click)="done(task)">
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" (click)="addTask()">
+    <ion-fab-button color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab horizontal="start" vertical="bottom" slot="fixed" (click)="email()">
+    <ion-fab-button color="secondary">
+      <ion-icon name="document-text-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
